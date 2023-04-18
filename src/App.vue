@@ -1,24 +1,24 @@
 <template>
   <div class="clone">
-    <!-- <div class="cosnt" >
-  <h1 style="left: 15px; color: #fff;"></h1>
-  <div class="on">
+    <div class="cosnt" >
+
   <div class="bee" v-for="( player, index ) in sortedPlayers" :key="index">
     <div class="rank">
       <h5>Rank:</h5>
       <h1>{{ player.rank }}</h1>
     </div>
+
     <div class="box">
       <h5 style="left: 15px">Group:</h5>
       <h1 style="left: 15px">{{ player.text }}</h1>
     </div>
+
     <div class="score">
       <h5>Score</h5>
       <h1>{{ player.score }}</h1>
     </div>
   </div>
-  </div>
-</div> -->
+</div>
  
     <div class="container" >
       <div class="option-card" v-for="item in arr" :value="item.id">
@@ -112,8 +112,9 @@
 }
 .clone {
   height: 100vh;
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 50px;
   justify-content: center;
   align-items: center;
   background-color:#ffc300;
@@ -122,23 +123,21 @@
 .cosnt {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
   background-color: #003566;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
-}
-  
-.on {
   margin: 35px;
   height: 800px;
   width: 900px;
   overflow-y: scroll;
   scroll-margin-block: 20px;
   margin: 0 0 40px 0;
+  
 }
 
-.on::-webkit-scrollbar{
+.cosnt::-webkit-scrollbar{
     display: none;
   }
 .bee {
@@ -152,23 +151,7 @@
   border-radius: 10px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-.box1 {
-  width: 450px;
-  height: 45px;
-  margin: 15px;
-}
-.rank1 {
-  width: 100px;
-  height: 45px;
-  margin: 15px;
-}
 
-.score1 {
-  width: 110px;
-  height: 45px;
-  margin: 15px;
-
-}
 .box {
   width: 450px;
   height: 75px;
@@ -193,13 +176,13 @@
 
 
 .container {
-  margin: 5px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  width: 1200px;
-  /* overflow-y: scroll; */
+  width: 600px;
+  height: 800px;
+  overflow-y: scroll;
 }
 
 .container::-webkit-scrollbar{
